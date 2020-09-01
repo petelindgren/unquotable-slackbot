@@ -4,9 +4,11 @@ from fastapi import FastAPI
 
 
 from quotable.routers import pinky_and_the_brain
+from quotable.routers import futurama
 
 app = FastAPI()
 app.include_router(pinky_and_the_brain.router, prefix="")
+app.include_router(futurama.router, prefix="")
 
 
 @app.get("/", status_code=200)
