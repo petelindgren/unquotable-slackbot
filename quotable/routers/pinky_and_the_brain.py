@@ -189,3 +189,8 @@ router = APIRouter()
 @router.get("/aypwip")
 def aypwip():
     return quotes[randint(0, 177)]
+
+
+@router.post("/aypwip")
+def aypwip():
+    return quotes[randint(0, 177)]
