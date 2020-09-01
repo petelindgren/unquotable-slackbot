@@ -1,6 +1,6 @@
 from quotable.helpers import QuoteData
 
-futurama_quotes = [
+zapp_brannigan_quotes = [
     QuoteData(
         quote="If we hit that bullseye, the rest of the dominoes will fall like a house of cards. Checkmate.",
         person="Zapp Branigan",
@@ -39,6 +39,8 @@ futurama_quotes = [
     QuoteData(
         quote="You win again, gravity!", person="Zapp Branigan", source="Futurama"
     ),
+]
+bender_quotes = [
     QuoteData(
         quote="My Story Is A Lot Like Yours, Only More Interesting 'Cause It Involves Robots.",
         person="Bender",
@@ -59,14 +61,21 @@ futurama_quotes = [
         person="Bender",
         source="Futurama",
     ),
-    QuoteData(
-        quote="I never thought it would end this way, gunned down by Santa Claus.",
-        person="Fry",
-        source="Futurama",
-    ),
-    QuoteData(
-        quote="Now, Now. There Will Be Plenty Of Time To Discuss Your Objections When And If You Return.",
-        person="Professor Farnsworth",
-        source="Futurama",
-    ),
 ]
+
+futurama_quotes = (
+    zapp_brannigan_quotes
+    + bender_quotes
+    + [
+        QuoteData(
+            quote="I never thought it would end this way, gunned down by Santa Claus.",
+            person="Fry",
+            source="Futurama",
+        ),
+        QuoteData(
+            quote="Now, Now. There Will Be Plenty Of Time To Discuss Your Objections When And If You Return.",
+            person="Professor Farnsworth",
+            source="Futurama",
+        ),
+    ]
+)
