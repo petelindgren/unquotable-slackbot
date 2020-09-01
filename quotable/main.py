@@ -1,7 +1,9 @@
+import random
+
 import uvicorn
 
 from fastapi import FastAPI
-
+from fastapi.responses import JSONResponse
 
 from quotable.routers import pinky_and_the_brain
 from quotable.routers import futurama
@@ -9,6 +11,8 @@ from quotable.routers import futurama
 app = FastAPI()
 app.include_router(pinky_and_the_brain.router, prefix="")
 app.include_router(futurama.router, prefix="")
+
+quote_engines = [pinky_and_the_brain.generate_quote, futurama.generate_quote]
 
 
 @app.get("/", status_code=200)
@@ -19,6 +23,18 @@ async def root():
 @app.get("/healthcheck", status_code=200)
 async def healthcheck():
     return "quotable is up and running"
+
+
+@app.get("/quote", status_code=200)
+async def get_quote():
+    random_quote = random.choice(quote_engines)()
+    return JSONResponse(random_quote)
+
+
+@app.post("/quote", status_code=200)
+async def post_quote():
+    random_quote = random.choice(quote_engines)()
+    return JSONResponse(random_quote)
 
 
 if __name__ == "__main__":
