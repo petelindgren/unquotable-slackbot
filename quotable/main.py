@@ -25,14 +25,14 @@ async def healthcheck():
     return "quotable is up and running"
 
 
-@app.get("/quote", status_code=200)
-async def get_quote():
+@app.get("/random", status_code=200)
+async def get_random_quote():
     random_quote = random.choice(quote_engines)()
     return JSONResponse(random_quote)
 
 
-@app.post("/quote", status_code=200)
-async def post_quote():
+@app.post("/random", status_code=200)
+async def post_random_quote():
     random_quote = random.choice(quote_engines)()
     return JSONResponse(random_quote)
 
