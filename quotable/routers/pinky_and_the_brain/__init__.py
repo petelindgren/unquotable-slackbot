@@ -17,19 +17,26 @@ def generate_quote():
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": "_Pinky, are you pondering what I'm pondering?_\n- *Brain*",
+                    "text": "_Pinky, are you pondering what I'm pondering?_ - *Brain*",
                 },
             }
         ],
         "attachments": [
             {
-                "type": "section",
-                "text": {"type": "mrkdwn", "text": f"_{quote_data.quote}_"},
-            },
-            {
-                "type": "section",
-                "text": {"type": "mrkdwn", "text": f"- *_{quote_data.person}_*"},
-            },
+                "blocks": [
+                    {
+                        "type": "section",
+                        "text": {"type": "mrkdwn", "text": f"_{quote_data.quote}_"},
+                    },
+                    {
+                        "type": "section",
+                        "text": {
+                            "type": "mrkdwn",
+                            "text": f"- *_{quote_data.person}_*",
+                        },
+                    },
+                ]
+            }
         ],
     }
 
