@@ -10,6 +10,7 @@ black = "==18.9b0"
 uvicorn = "*"
 fastapi = "*"
 fastapi-utils = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"
