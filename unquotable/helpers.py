@@ -1,4 +1,5 @@
-from typing import NamedTuple, Optional
+import logging
+from typing import List, NamedTuple, Optional
 
 
 class QuoteData(NamedTuple):
@@ -13,3 +14,11 @@ class QuoteData(NamedTuple):
             person=data.get("person"),
             source=data.get("source"),
         )
+
+
+class QuoteEngine(object):
+    def __init__(self, quotes: List[QuoteData]):
+        self.quotes = quotes
+
+    def generate_quote(self):
+        raise NotImplementedError
