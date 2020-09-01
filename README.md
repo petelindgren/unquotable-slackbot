@@ -5,7 +5,7 @@ the Python framework FastAPI.  And it was an excuse to go look up silly quotes.
 ## API Endpoints
 For now, `GET` and `POST` endpoints run the same code.
 Use `GET` to preview result in a browser and `POST` is for Slack
-- GET and POST `/quote` select a random quotation
+- GET and POST `/random` select a random quotation
 - GET and POST `/aypwip` (short for _are you pondering what I'm pondering?_)
 - GET and POST `/futurama` (Futurama quotes)
 
