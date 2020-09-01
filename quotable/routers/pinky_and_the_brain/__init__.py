@@ -32,7 +32,7 @@ def generate_quote():
                         "type": "section",
                         "text": {
                             "type": "mrkdwn",
-                            "text": f"- *_{quote_data.person}_*",
+                            "text": f"- *{quote_data.person}* _{quote_data.source}_",
                         },
                     },
                 ]
@@ -44,12 +44,12 @@ def generate_quote():
 
 
 @router.get("/aypwip")
-def aypwip():
+def get_aypwip():
     quote_response = generate_quote()
     return JSONResponse(quote_response)
 
 
 @router.post("/aypwip")
-def aypwip():
+def post_aypwip():
     quote_response = generate_quote()
     return JSONResponse(quote_response)
