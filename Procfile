@@ -1,0 +1,1 @@
+web: uvicorn quotable.app:app
