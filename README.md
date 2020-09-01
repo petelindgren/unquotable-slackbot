@@ -8,6 +8,8 @@ Use `GET` to preview result in a browser and `POST` is for Slack
 - GET and POST `/random` select a random quotation
 - GET and POST `/aypwip` (short for _are you pondering what I'm pondering?_)
 - GET and POST `/futurama` (Futurama quotes)
+- GET and POST `/zappbrannigan` (Futurama quotes)
+- GET and POST `/bender` (Futurama quotes)
 
 
 ## References

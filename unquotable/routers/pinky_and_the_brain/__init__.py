@@ -2,8 +2,8 @@ from fastapi import APIRouter
 from fastapi.responses import JSONResponse
 from random import randint
 
-from quotable.helpers import QuoteData
-from quotable.routers.pinky_and_the_brain.quotes import pinky_quotes
+from unquotable.helpers import QuoteData
+from unquotable.routers.pinky_and_the_brain.quotes import pinky_quotes
 
 router = APIRouter()
 

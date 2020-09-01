@@ -3,8 +3,8 @@ from fastapi.responses import JSONResponse
 from random import randint
 from typing import List
 
-from quotable.helpers import QuoteData, QuoteEngine
-from quotable.routers.futurama.quotes import (
+from unquotable.helpers import QuoteData, QuoteEngine
+from unquotable.routers.futurama.quotes import (
     zapp_brannigan_quotes,
     bender_quotes,
     futurama_quotes,
@@ -52,25 +52,25 @@ def post_futurama():
     return JSONResponse(quote_response)
 
 
-@router.get("/zapp")
-def get_futurama():
+@router.get("/zappbrannigan")
+def get_futurama_zappbrannigan():
     quote_response = FuturamaQuoteEngine(zapp_brannigan_quotes).generate_quote()
     return JSONResponse(quote_response)
 
 
-@router.post("/zapp")
-def post_futurama():
+@router.post("/zappbrannigan")
+def post_futurama_zappbrannigan():
     quote_response = FuturamaQuoteEngine(zapp_brannigan_quotes).generate_quote()
     return JSONResponse(quote_response)
 
 
 @router.get("/bender")
-def get_futurama():
+def get_futurama_bender():
     quote_response = FuturamaQuoteEngine(bender_quotes).generate_quote()
     return JSONResponse(quote_response)
 
 
 @router.post("/bender")
-def post_futurama():
+def post_futurama_bender():
     quote_response = FuturamaQuoteEngine(bender_quotes).generate_quote()
     return JSONResponse(quote_response)

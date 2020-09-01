@@ -1,4 +1,4 @@
-from quotable.helpers import QuoteData
+from unquotable.helpers import QuoteData
 
 # Reference: https://pinkyandthebrain.fandom.com/wiki/Are_You_Pondering_What_I%27m_Pondering%3F
 pinky_quotes = [

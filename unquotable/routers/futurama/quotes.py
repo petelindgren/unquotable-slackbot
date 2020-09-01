@@ -1,4 +1,4 @@
-from quotable.helpers import QuoteData
+from unquotable.helpers import QuoteData
 
 zapp_brannigan_quotes = [
     QuoteData(
