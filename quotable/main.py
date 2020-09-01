@@ -9,6 +9,11 @@ app = FastAPI()
 app.include_router(pinky_and_the_brain.router, prefix="")
 
 
+@app.get("/", status_code=200)
+async def root():
+    return "powered by FastAPI"
+
+
 @app.get("/healthcheck", status_code=200)
 async def healthcheck():
     return "quotable is up and running"
