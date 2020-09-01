@@ -1,4 +1,5 @@
 from fastapi import APIRouter
+from fastapi.responses import JSONResponse
 from random import randint
 
 # Reference: https://pinkyandthebrain.fandom.com/wiki/Are_You_Pondering_What_I%27m_Pondering%3F
@@ -186,11 +187,31 @@ quotes = [
 router = APIRouter()
 
 
+def generate_quote():
+    text_quote = quotes[randint(0, 177)]
+    quote_response = {
+        "response_type": "in_channel",
+        "attachments": [
+            {
+                "fallback": text_quote,
+                "pretext": "Are you pondering what I'm pondering?",
+                "color": "#36a64f",
+                "text": text_quote,
+                "footer": "Pinky and the Brain",
+            }
+        ],
+    }
+
+    return quote_response
+
+
 @router.get("/aypwip")
 def aypwip():
-    return quotes[randint(0, 177)]
+    quote_response = generate_quote()
+    return JSONResponse(quote_response)
 
 
 @router.post("/aypwip")
 def aypwip():
-    return quotes[randint(0, 177)]
+    quote_response = generate_quote()
+    return JSONResponse(quote_response)
