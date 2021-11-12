@@ -4,7 +4,7 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-black = "==18.9b0"
+black = "==21.10b0"
 
 [packages]
 uvicorn = "*"
@@ -13,4 +13,4 @@ fastapi-utils = "*"
 gunicorn = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.9"
